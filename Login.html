@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Login -->
+        <div class="login-box" id="login-box">
+            <h1 class="title">T</h1>
+            <h2 class="welcome">Welcome!</h2>
+            <form id="login-form" onsubmit="return loginUser(event)">
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Log in</button>
+                <a href="#" class="forgot-password" onclick="showForgotPassword()">Forgot Password</a>
+                <button type="button" class="btn create-btn" onclick="showCreateAccount()">Create</button>
+            </form>
+            <p class="no-account">Don't Have an Account?</p>
+            <a href="mailto:niyotrendy@gmail.com" class="email">niyotrendy@gmail.com</a>
+        </div>
+
+        <!-- Tela de Criar Conta -->
+        <div class="login-box" id="create-account-box" style="display: none;">
+            <h1 class="title">T</h1>
+            <h2 class="welcome">Create Account</h2>
+            <form id="create-form">
+                <div class="input-box">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                </div>
+                <div class="input-box">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <div class="input-box">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Create Account</button>
+                <button type="button" class="btn create-btn" onclick="showLogin()">Back to Login</button>
+            </form>
+        </div>
+
+        <!-- Tela de Esqueci a Senha -->
+        <div class="login-box" id="forgot-password-box" style="display: none;">
+            <h1 class="title">T</h1>
+            <h2 class="welcome">Forgot Password</h2>
+            <form id="forgot-form">
+                <div class="input-box">
+                    <label for="forgot-username">Username or Email</label>
+                    <input type="text" id="forgot-username" name="forgot-username" required>
+                </div>
+                <button type="submit" class="btn login-btn">Send Reset Link</button>
+                <button type="button" class="btn create-btn" onclick="showLogin()">Back to Login</button>
+            </form>
+        </div>
+
+        <!-- Tela Home - Exibindo Previsão do Tempo e Dicas de Moda -->
+        <div class="home-box" id="home-box" style="display: none;">
+            <h1 class="title">Welcome to Home</h1>
+            <div class="weather-section">
+                <h2>Weather Forecast</h2>
+                <p id="weather-info">Loading...</p>
+            </div>
+            <div class="fashion-tips">
+                <h2>Fashion Tips</h2>
+                <p id="fashion-tips">Based on the weather, here are some fashion tips...</p>
+            </div>
+            <button class="btn create-btn" onclick="showLogin()">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
