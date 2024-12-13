@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="login-box">
+        <div class="login-box" id="login-box">
             <h1 class="title">T</h1>
             <h2 class="welcome">Welcome!</h2>
-            <form>
+            <form id="login-form">
                 <div class="input-box">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
@@ -21,12 +21,52 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn login-btn">Log in</button>
-                <a href="#" class="forgot-password">Forgot Password</a>
-                <button type="button" class="btn create-btn">Create</button>
+                <a href="#" class="forgot-password" onclick="showForgotPassword()">Forgot Password</a>
+                <button type="button" class="btn create-btn" onclick="showCreateAccount()">Create</button>
             </form>
             <p class="no-account">Don't Have an Account?</p>
             <a href="mailto:niyotrendy@gmail.com" class="email">niyotrendy@gmail.com</a>
         </div>
+
+        <div class="home-box" id="home-box" style="display:none;">
+            <h2>Home Page</h2>
+            <div class="weather-section" id="weather-info"></div>
+            <div class="fashion-tips" id="fashion-tips"></div>
+        </div>
+
+        <!-- Create Account Box -->
+        <div class="create-account-box" id="create-account-box" style="display:none;">
+            <h2>Create Account</h2>
+            <form id="create-form">
+                <div class="input-box">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" required>
+                </div>
+                <div class="input-box">
+                    <label for="new-email">Email</label>
+                    <input type="email" id="new-email" required>
+                </div>
+                <div class="input-box">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+        </div>
+
+        <!-- Forgot Password Box -->
+        <div class="forgot-password-box" id="forgot-password-box" style="display:none;">
+            <h2>Forgot Password</h2>
+            <form id="forgot-form">
+                <div class="input-box">
+                    <label for="forgot-email">Enter your email</label>
+                    <input type="email" id="forgot-email" required>
+                </div>
+                <button type="submit" class="btn">Send Reset Link</button>
+            </form>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
